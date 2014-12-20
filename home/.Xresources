@@ -1,0 +1,120 @@
+! font settings --------------------------------------------------------------
+Xft.autohint: 0
+Xft.antialias: true
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.dpi: 96
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+
+! xscreensaver ---------------------------------------------------------------
+
+!font settings
+xscreensaver.Dialog.headingFont:        -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+xscreensaver.Dialog.bodyFont:           -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+xscreensaver.Dialog.labelFont:          -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+xscreensaver.Dialog.unameFont:          -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+xscreensaver.Dialog.buttonFont:         -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+xscreensaver.Dialog.dateFont:           -*-fixed-medium-r-*-*-12-*-*-*-*-*-*-*
+xscreensaver.passwd.passwdFont:         -*-fixed-medium-r-*-*-14-*-*-*-*-*-*-*
+!general dialog box (affects main hostname, username, password text)
+xscreensaver.Dialog.foreground:         #101010
+xscreensaver.Dialog.background:         #D8D8D8
+xscreensaver.Dialog.topShadowColor:     #D8D8D8
+xscreensaver.Dialog.bottomShadowColor:  #D8D8D8
+xscreensaver.Dialog.Button.foreground:  #101010
+xscreensaver.Dialog.Button.background:  #E5E5E5
+!username/password input box and date text colour
+xscreensaver.Dialog.text.foreground:    #101010
+xscreensaver.Dialog.text.background:    #E5E5E5
+xscreensaver.Dialog.internalBorderWidth:24
+xscreensaver.Dialog.borderWidth:        0
+xscreensaver.Dialog.shadowThickness:    2
+!timeout bar (background is actually determined by Dialog.text.background)
+xscreensaver.passwd.thermometer.foreground:  #101010
+xscreensaver.passwd.thermometer.background:  #2E2E2E
+xscreensaver.passwd.thermometer.width:       8
+
+!{Color schemes}
+*background: #333333
+*foreground: #dbdbdb
+
+!Technobass
+! -- black
+*color0: #000000
+! -- red
+*color1: #ff8888
+! -- green
+*color2: #80852d
+! -- yellow
+*color3: #ffaa55
+! -- blue
+*color4: #82b8f2
+! -- purple
+*color5: #ad7fa8
+! -- cyan
+*color6: #6b9b8b
+! -- white
+*color7: #babdb6
+! -- bright-black
+*color8: #555753
+! -- bright-red
+*color9: #e5505f
+! -- bright-green
+*color10: #b7e234
+! -- bright-yellow
+*color11: #e8621d
+! -- bright-blue
+*color12: #0088cc
+! -- bright-purple
+*color13: #cb99e1
+! -- bright-cyan
+*color14: #34E2E2
+! -- bright-white
+*color15: #e9e9e9
+
+! URxvt settings -------------------------------------------------------------{
+
+!URxvt.font: xft:Terminus:style=Regular:pixelsize=15:antialias=false
+!URxvt.boldFont: xft:Terminus:style=Bold:pixelsize=15:antialias=false
+!URxvt.italicFont: xft:Terminus:style=Italic:pixelsize=15:antialias=false
+!URxvt.boldItalicFont: xft:Terminus:style=Bold Italic:pixelsize=15:antialias=false
+
+URxvt.font: xft:Dina:style=Regular:pixelsize=16:antialias=false
+URxvt.boldFont: xft:Dina:style=Bold:pixelsize=16:antialias=false
+URxvt.italicFont: xft:Dina:style=Italic:pixelsize=16:antialias=false
+URxvt.boldItalicFont: xft:Dina:style=Bold Italic:pixelsize=16:antialias=false
+
+!URxvt.font: xft:Envy Code R:style=Regular:pixelsize=15
+!URxvt.boldFont: xft:Envy Code R:style=Bold:pixelsize=15
+!URxvt.italicFont: xft:Envy Code R:style=Italic:pixelsize=15
+!URxvt.boldItalicFont: xft:Envy Code R:style=Bold Italic:pixelsize=15
+
+!URxvt.font: xft:Consolas:style=Regular:pixelsize=13
+!URxvt.boldFont: xft:Consolas:style=Bold:pixelsize=13
+!URxvt.italicFont: xft:Consolas:style=Italic:pixelsize=13
+!URxvt.boldItalicFont: xft:Consolas:style=Bold Italic:pixelsize=13
+!URxvt.letterSpace: -2
+!URxvt.letterSpace: -1
+URxvt.letterSpace: 0
+
+URxvt.cursorBlink: true
+URxvt.cursorColor: #FFFFFF
+URxvt.cutchars: "()*,<>\"[]{}|'"
+URxvt.inheritPixmap: true
+URxvt.print-pipe: "cat > $(echo $HOME/urxvt.dump.$(date +'%Y%M%d%H%m%S'))"
+URxvt.saveLines: 32874
+URxvt.scrollBar: false
+URxvt.shading: 20
+URxvt.termName: xterm-256color
+URxvt.transparent: true
+URxvt.urgentOnBell: true
+URxvt.visualBell: true
+URxvt.perl-lib: /home/ootput/.urxvt/urxvt-perls
+URxvt.perl-ext-common:      default,url-select
+URxvt.keysym.M-u:    perl:url-select:select_next
+URxvt.url-select.button: 1
+URxvt.url-select.launcher:   iceweasel -new-tab
+URxvt.url-select.underline: true
+
+!}
