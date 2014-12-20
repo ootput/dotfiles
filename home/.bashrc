@@ -25,10 +25,10 @@ shopt -s checkwinsize
 
 # If set, the pattern "**" used in a pathname expansion context will
 # match all files and zero or more directories and subdirectories.
-#shopt -s globstar
+shopt -s globstar
 
 # make less more friendly for non-text input files, see lesspipe(1)
-#[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
@@ -43,7 +43,7 @@ esac
 # uncomment for a colored prompt, if the terminal has the capability; turned
 # off by default to not distract the user: the focus in a terminal window
 # should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+force_color_prompt=yes
 
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
@@ -76,12 +76,6 @@ esac
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
     alias ls='ls --color=auto'
-    #alias dir='dir --color=auto'
-    #alias vdir='vdir --color=auto'
-
-    #alias grep='grep --color=auto'
-    #alias fgrep='fgrep --color=auto'
-    #alias egrep='egrep --color=auto'
 fi
 
 # some more ls aliases
@@ -109,12 +103,64 @@ if ! shopt -oq posix; then
   fi
 fi
 
-if [ "$DISPLAY" ]
-then
-    EDITOR=gvim
-else
-    EDITOR=vim
-fi
+EDITOR=v
+
+UsernameColor='\e[38;5;27;1;48;5;235m' 
+DirColor='\e[38;5;39;2;48;5;235m' 
+PSColor=$'\e[38;15;39;2m' 
+NC=$'\e[m'
+
+PS1="\n[$UsernameColor \u@\h $NC] [$DirColor\w$NC] \n#! "
+PS2="$PSColor>$NC "
+PS3="$PSColor#? $NC"
+
+# Easy extract
+sextract () {
+	if [ -f $1 ] ; then
+		case $1 in
+			*.tar.bz2)   sudo tar xvjf $1    ;;
+		    *.tar.gz)    sudo tar xvzf $1    ;;
+		    *.bz2)       sudo bunzip2 $1     ;;
+			*.rar)       sudo rar x $1       ;;
+		    *.gz)        sudo gunzip $1      ;;
+		    *.tar)       sudo tar xvf $1     ;;
+		    *.tbz2)      sudo tar xvjf $1    ;;
+		    *.tgz)       sudo tar xvzf $1    ;;
+		    *.zip)       sudo unzip $1       ;;
+		    *.Z)         sudo uncompress $1  ;;
+		    *.7z)        sudo 7z x $1        ;;
+            *)           echo "don't know how to extract '$1'..." ;;
+		esac
+	else
+	    echo "'$1' is not a valid file!"
+    fi
+}
+extract () {
+	if [ -f $1 ] ; then
+		case $1 in
+			*.tar.bz2)   tar xvjf $1    ;;
+		    *.tar.gz)    tar xvzf $1    ;;
+		    *.bz2)       bunzip2 $1     ;;
+			*.rar)       rar x $1       ;;
+		    *.gz)        gunzip $1      ;;
+		    *.tar)       tar xvf $1     ;;
+		    *.tbz2)      tar xvjf $1    ;;
+		    *.tgz)       tar xvzf $1    ;;
+		    *.zip)       unzip $1       ;;
+		    *.Z)         uncompress $1  ;;
+		    *.7z)        7z x $1        ;;
+            *)           echo "don't know how to extract '$1'..." ;;
+		esac
+	else
+	    echo "'$1' is not a valid file!"
+    fi
+}
+
+mktar() { tar cvf  "${1%%/}.tar"     "${1%%/}/"; }
+mktgz() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
+mktbz() { tar cvjf "${1%%/}.tar.bz2" "${1%%/}/"; }
+
+eval `dircolors ~/.dir_colors`
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
