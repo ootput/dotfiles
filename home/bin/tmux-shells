@@ -1,0 +1,20 @@
+#!/bin/sh
+
+tmux start-server
+tmux new-session -d -s shells
+tmux select-window -t shells:1
+sleep 2
+tmux split-window -h 'exec ncmpcpp'
+tmux split-window -v 'exec weechat-curses'
+tmux select-pane -L
+tmux new-window -t shells:2 "sudo -i"
+tmux new-window -t shells:3 "vifm"
+sleep 2
+tmux select-window -t shells:3
+tmux rename-window "vifm"
+tmux select-window -t shells:2
+tmux rename-window "root"
+tmux select-window -t shells:1
+tmux rename-window "general"
+
+tmux -2 attach -t shells
