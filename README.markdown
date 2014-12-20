@@ -3,10 +3,7 @@ My personal dotfiles
 
 Requires:
 
-GIT
-[homeshick](https://github.com/andsens/homeshick)
-[bash-it](https://github.com/revans/bash-it)
-[spf13-vim](https://github.com/spf13/spf13-vim)
+GIT; [homeshick](https://github.com/andsens/homeshick); [bash-it](https://github.com/revans/bash-it); and [spf13-vim](https://github.com/spf13/spf13-vim)
 
 See detailed installations instructions for homeshick [here.](https://github.com/andsens/homeshick/wiki/Installation)
 
