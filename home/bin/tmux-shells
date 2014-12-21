@@ -5,7 +5,7 @@ tmux new-session -d -s shells
 tmux select-window -t shells:1
 sleep 2
 tmux split-window -h 'exec ncmpcpp'
-tmux split-window -v 'exec weechat-curses'
+#tmux split-window -v 'exec weechat-curses'
 tmux select-pane -L
 tmux new-window -t shells:2 "sudo -i"
 tmux new-window -t shells:3 "vifm"
