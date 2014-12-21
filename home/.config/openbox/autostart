@@ -61,14 +61,14 @@ xscreensaver -no-splash &
 
 ## Set keyboard settings - 250 ms delay and 25 cps (characters per second) repeat rate.
 ## Adjust the values according to your preferances.
-xset r rate 250 25 &
+xset r rate 200 60 &
 
 ## Turn on/off system beep
 xset b off &
 
 setxkbmap -option ctrl:swapcaps
 setxkbmap -option terminate:ctrl_alt_bksp
-xcape &
+$HOME/bin/xcape &
 
 xset fp+ $HOME/.fonts/profont
 xset fp+ $HOME/.fonts/dina
@@ -85,5 +85,5 @@ unclutter -idle 2 &
 
 ## Run the conky
 conky -q &
-tt shells &
+$HOME/bin/tt shells &
 iceweasel &

@@ -1,1 +1,2 @@
+zstyle ':prezto:module:prompt' theme 'jerome'
 source ${ZDOTDIR:-$HOME}/.zprezto/runcoms/zpreztorc
