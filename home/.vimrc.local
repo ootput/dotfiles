@@ -6,6 +6,9 @@ inoremap <Down>  <NOP>
 
 nmap <Leader>cd :lcd %:p:h<CR>
 
+"Press i to toggle the appearance of the file tree in netrw (nerdtree style)
+let g:netrw_liststyle=3
+
 " Buffer Management {
 
     " F2 to save all bufers
