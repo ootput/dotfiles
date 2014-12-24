@@ -1,0 +1,12 @@
+notifempty
+noolddir
+compress
+delaycompress
+weekly
+missingok
+size 100k
+create 640 ootput ootput
+
+/home/ootput/logs/*.log {
+rotate 3
+}

@@ -1,0 +1,27 @@
+auto-reload yes
+bind-key ^b left
+bind-key ^n down
+bind-key ^p up
+bind-key ^f right
+bind-key m toggle-show-read-feeds
+browser chromium
+confirm-exit no
+download-path ~/dl
+goto-next-feed no
+max-items 500
+notify-xterm yes
+player mplay
+prepopulate-query-feeds yes
+refresh-on-startup yes
+reload-time 3600
+save-path ~/media/documents/FeedArticles
+show-read-articles no
+show-read-feeds no
+suppress-first-reload yes
+text-width 72
+
+color background   white   default
+color listnormal   white   default
+color listfocus    cyan  default   bold
+color info         blue  default   bold
+color article      white   default

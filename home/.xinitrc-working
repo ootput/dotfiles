@@ -1,0 +1,60 @@
+#!/bin/sh
+
+export PATH="$HOME/bin:$HOME/local/bin:/usr/sbin:/usr/local/sbin:/usr/local/bin:$PATH"
+
+errfile="$HOME/.xerrors"
+if cp /dev/null "$errfile" 2> /dev/null ; then
+    chmod 600 "$errfile"
+    exec > "$errfile" 2>&1
+else
+    errfile="$(mktemp -q /tmp/xses-$USER.XXXXXX)"
+    if [ $? -eq 0 ]; then
+        exec > "$errfile" 2>&1
+    fi
+fi
+
+cat /dev/null > $HOME/.xsel.log
+#xrdb -merge $HOME/.Xresources
+xset fp+ $HOME/.fonts/profont
+xset fp+ $HOME/.fonts/envy_code_r
+xset fp+ $HOME/.fonts/ttf
+
+setxkbmap -layout us -model evdev -rules xorg -option ctrl:nocaps
+setxkbmap -option terminate:ctrl_alt_bksp
+xmodmap $HOME/.xmodmaprc
+
+xset -b
+xset r rate 250 30 >/dev/null 2>&1
+
+exec enlightenment_start & wmpid=$!
+#exec openbox & wmpid=$!
+#eval "$(cat ~/.fehbg)"
+#conky --quiet &
+#xcompmgr -c -n &
+#tint2 -c $HOME/.tint2rc &
+#cairo-dock -o &
+
+if ! fuser "/tmp/emacs$(id -u)/server" >/dev/null 2>&1 ; then
+    emacs --daemon >/dev/null 2>&1
+fi
+
+urxvtd -q -f -o
+
+numlockx &
+unclutter -idle 2 &
+
+errfile="$(mktemp -q /tmp/xses-$USER.XXXXXX)"
+if [ $? -eq 0 ]; then
+    exec > "$errfile" 2>&1
+fi
+
+mpdscribble_status="$(pidof mpdscribble)"
+if [ $? -ne 0 ]; then
+     mpdscribble &
+fi
+
+$HOME/bin/tt shells &
+
+x11vnc -display :0 -rfbauth ~/.vnc/passwd -geometry 1024x768 -forever -shared &>/dev/null 2>&1
+
+wait $wmpid
