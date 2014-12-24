@@ -1,0 +1,2 @@
+#!/bin/bash
+(lbdbq "$@" | tee >(head -n 1 >&2) 2>/dev/null | grep -v ^lbdbq:.*matches | tac) 2>&1
