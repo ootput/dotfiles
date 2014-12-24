@@ -36,5 +36,6 @@
   "Bundle 'cppcomplete'
   Bundle 'OmniCppComplete'
   Bundle 'tpope/vim-unimpaired'
+  Bundle 'pdurbin/vim-tsv'
 
 " }
