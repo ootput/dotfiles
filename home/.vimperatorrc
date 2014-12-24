@@ -1,0 +1,25 @@
+" Options
+set history=50
+set defsearch=google
+set hintchars=asdfhjkl
+set toolbars=noaddons,nomenu,tabs
+""set toolbars=noaddons,nobookmarks,nomenu,nonavigation,tabs
+set focuscontent
+set verbose=1
+set popups=tab,resized
+set complete=l
+
+set incsearch
+set ignorecase
+set smartcase
+
+" increase the font size for hints
+:highlight Hint font-size:120%;color:white;background-color:red;padding:2px;
+
+" scroll
+nnoremap j 3j
+nnoremap k 3k
+nnoremap J <C-d>
+nnoremap K <C-u>
+
+" vim: set ft=vimperator:
