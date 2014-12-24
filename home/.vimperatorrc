@@ -1,25 +1,40 @@
-" Options
-set history=50
-set defsearch=google
-set hintchars=asdfhjkl
-set toolbars=noaddons,nomenu,tabs
-""set toolbars=noaddons,nobookmarks,nomenu,nonavigation,tabs
-set focuscontent
-set verbose=1
-set popups=tab,resized
-set complete=l
-
-set incsearch
-set ignorecase
-set smartcase
-
-" increase the font size for hints
-:highlight Hint font-size:120%;color:white;background-color:red;padding:2px;
-
-" scroll
 nnoremap j 3j
-nnoremap k 3k
 nnoremap J <C-d>
+nnoremap k 3k
 nnoremap K <C-u>
+
+" Options
+set activate=homepage,tabopen,quickmark,paste
+:set! browser.urlbar.clickSelectsAll=false
+:set! browser.urlbar.doubleClickSelectsAll=true
+set complete=l
+set defsearch=google
+set editor=gvim
+set focuscontent
+set guioptions+=mTn
+set hintchars=asdfhjkl
+set hinttags="//*[@onclick or @onmouseover or @onmousedown or @onmouseup or @oncommand or @class='lk' or @role='link' or @role='button' or @role='option'] | //input[not(@type='hidden')] | //a | //area | //iframe | //textarea | //button | //select | //xhtml:input[not(@type='hidden')] | //xhtml:a | //xhtml:area | //xhtml:iframe | //xhtml:textarea | //xhtml:button | //xhtml:select"
+set history=50
+set hlsearch
+set ignorecase
+set incsearch
+set newtab=all
+set popups=tab,resized
+set smartcase
+set titlestring="Firefox"
+set toolbars=noaddons,nomenu,tabs
+set verbose=1
+
+map ,d <ESC>:dsearch -query
+map ,q <ESC>:q<CR>
+map ,w <ESC>:w<CR>
+map ,Q <ESC>:qall!<CR>
+
+cabbrev yt http://www.youtube.com
+cabbrev im https://imap.cc
+cabbrev gt http://github.com/ootput/configs/tree/dotfiles
+cabbrev fdn http://forums.debian.net
+cabbrev opt http://memberservices.optusnet.com.au/myusage
+cabbrev ez http://eztv.it
 
 " vim: set ft=vimperator:
