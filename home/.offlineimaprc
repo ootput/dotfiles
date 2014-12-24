@@ -1,0 +1,21 @@
+[general]
+accounts = imap.gmail
+#ui = Noninteractive.Quiet
+ui = Basic
+
+[Account imap.gmail]
+localrepository = mylocal
+remoterepository = myremote
+
+[Repository mylocal]
+type = IMAP
+preauthtunnel = /usr/local/sbin/dovecot --exec-mail imap
+remotehost = localhost
+port = 143
+remoteuser = ootput
+
+[Repository myremote]
+type = IMAP
+remotehost = imap.gmail.com
+ssl = yes
+remoteuser = jlephan@gmail.com
