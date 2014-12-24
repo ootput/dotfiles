@@ -10,7 +10,7 @@ Otherwise, use a ready-made [homeshick-prezto bootstrap script](https://github.c
 
 Otherwise, at the very least, do the following:
 ```sh
-git clone git://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
+git clone https://github.com/andsens/homeshick.git $HOME/.homesick/repos/homeshick
 ```
 Source the `homeshick.sh` script from your rc scripts, e.g. .bashrc:
 ```sh
