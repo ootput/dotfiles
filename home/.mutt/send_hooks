@@ -1,0 +1,23 @@
+# -*- muttrc -*-
+
+reply-hook . 'unmy_hdr from'
+# if i was not listed as an explicit recipient, use a default from: address
+reply-hook '! ~p' source $HOME/mutt/profiles/profile.ootput
+
+reply-hook '~C jlephan@gmail.com' source $HOME/.mutt/profiles/profile.jlephan
+reply-hook '~C ootput@gmail.com' source $HOME/.mutt/profiles/profile.ootput
+reply-hook '~C zd32nv@gmail.com' source $HOME/.mutt/profiles/profile.zd32nv
+
+# when not replying, clear the default from: address from the last email
+send-hook '! ~Q' 'unmy_hdr from'
+# always use a short address for local email
+send-hook '! ~t @' 'my_hdr From: ootput <ootput@tolstoi>'
+
+send-hook (mutt-users)$ \
+        "source $HOME/.mutt/profiles/profile.ootput\n"
+
+folder-hook .                    source $HOME/.mutt/profiles/profile.jlephan
+
+folder-hook =INBOX.Inbox_ootput  source $HOME/.mutt/profiles/profile.ootput
+folder-hook =INBOX.Opensource    source $HOME/.mutt/profiles/profile.ootput
+folder-hook =INBOX.Inbox_zd32nv  source $HOME/.mutt/profiles/profile.zd32nv

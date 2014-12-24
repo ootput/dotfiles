@@ -1,0 +1,80 @@
+# -*- muttrc -*-
+
+## Dovecot Proxy
+#set folder = "imap://ootput@localhost/"
+#set spoolfile = "imap://ootput@localhost"
+#set tunnel = "/usr/local/sbin/dovecot --exec-mail imap"
+#
+
+set spoolfile = imaps://imap.gmail.com:993/INBOX
+set folder = imaps://imap.gmail.com:993
+set record='imaps://imap.gmail.com/[Gmail]/Sent Mail'
+set postponed='imaps://imap.gmail.com/[Gmail]/Drafts'
+set message_cachedir='~/.mutt/cache/bodies'
+set certificate_file=~/.mutt/certificates
+
+set mask="!^\\.[^.]"
+mailboxes ! + `maildirs`
+
+set reverse_name
+set reverse_realname
+set from=jlephan@gmail.com
+alternates "(ootput|zd32nv)@gmail.com"
+
+set alias_file= ~/.mutt/aliases
+set sort_alias= alias
+set reverse_alias=yes
+source $alias_file
+
+set abort_nosubject=no
+set attach_split
+set auto_tag
+set bounce_delivered
+set charset="utf-8"
+set confirmappend
+set delete
+set display_filter="t-prot -cemktS --bigq --pgp-move-vrf --pgp-short -Mmutt"
+set edit_headers=yes
+set editor="ootput-editor %s"
+set fast_reply
+set fcc_clear=yes
+set folder_format="%2C %t %N %8s %d %f"
+set followup_to
+set hdr_format="%4C %Z %{%m/%d} %-15.15F (%4c) %s"
+set help
+set hidden_host
+set imap_check_subscribed
+set include=yes
+set index_format="%4C %Z %{%b %d} %-15.15F (%4c) %s"
+set mail_check=60
+set maildir_trash=yes
+set move=no
+set message_cachedir=$HOME/.cache/mutt/messages
+set narrow_tree
+set pager_format="-%?H?SC:%H?- %C/%m: %-20.20n %s"
+set pager_stop
+set query_command="~/bin/lbdbq-sort '%s'"
+set quote_regexp="^([ \t]*[|>:}#])+"
+set reverse_name=yes
+set reverse_realname=no
+set send_charset="utf-8"
+set smart_wrap
+set sort=threads
+set sort_aux=last-date
+set tilde
+set timeout=800
+set uncollapse_jump
+set use_envelope_from=yes
+set use_from=yes
+set wait_key=no
+set wrapmargin=10
+unset arrow_cursor
+unset askbcc
+unset askcc
+unset beep
+unset beep_new
+unset collapse_unread
+unset imap_passive
+unset mark_old
+unset markers
+unset menu_scroll

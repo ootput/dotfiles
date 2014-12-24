@@ -1,0 +1,55 @@
+# -*- muttrc -*-
+
+macro generic <f1> "!w3m /usr/share/doc/mutt/html/manual.html\n" \
+                   "Show Mutt documentation"
+
+bind  pager   p    previous-undeleted
+bind  pager   n    next-undeleted
+
+bind  pager   \cp  previous-line
+bind  pager   \cn  next-line
+bind  pager   \cb  exit
+bind  pager   \cf  view-attachments
+
+bind  attach  \cp  previous-entry
+bind  attach  \cn  next-entry
+bind  attach  \cb  exit
+bind  attach  \cf  view-attach
+
+bind  index   \cp  previous-entry
+bind  index   \cn  next-entry
+macro index   \cb  "\cx\cb"
+bind  index   \cf  display-message
+
+bind  browser \cp  previous-entry
+bind  browser \cn  next-entry
+macro browser \cb  "<exit><exit>"
+bind  browser \cf  select-entry
+
+macro pager \cu <pipe-entry>'urlview'<enter> 'Follow links with urlview'
+macro index <F10> ":source $HOME/.mutt/profiles/profile.jlephan\n" \
+                  "Load profile:jlephan"
+macro index <F11> ":source $HOME/.mutt/profiles/profile.ootput\n" \
+                  "Load profile:ootput"
+macro index <F12> ":source $HOME/.mutt/profiles/profile.zd32nv\n" \
+                  "Load profile:zd32nv"
+
+macro generic   \eb 'c=search'<enter><shell-escape>'mairix ' \
+                  'Enter Mairix search term'
+
+macro index "\cx\cb" "<sync-mailbox><change-folder>?<toggle-mailboxes>" \
+                     "open a different folder"
+macro pager "\cx\cb" "<sync-mailbox><change-folder>?<toggle-mailboxes>" \
+                     "open a different folder"
+
+macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+
+bind index s decrypt-save
+bind pager s decrypt-save
+
+macro index d "<save-message>=INBOX.Trash<enter>y"
+macro pager d "<save-message>=INBOX.Trash<enter>y"
+folder-hook =INBOX.Trash 'macro index d <delete-message>'
+
+macro generic <F9> "!offlineimap -u Noninteractive.Basic<enter>" "sync imap folders"

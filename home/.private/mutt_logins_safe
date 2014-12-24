@@ -1,0 +1,10 @@
+# -*- muttrc -*-
+
+## Dovecot Proxy
+#set folder = "imap://ootput@localhost/"
+#set spoolfile = "imap://ootput@localhost"
+#set tunnel = "/usr/local/sbin/dovecot --exec-mail imap"
+#
+
+set imap_user = 'jlephan@gmail.com'
+set imap_pass = '***'
