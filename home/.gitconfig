@@ -21,4 +21,4 @@
         sta = stash
         last = cat-file commit HEAD
 [core]
-	editor = "vim --remote-silent "
+	editor = "vim"
