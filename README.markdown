@@ -28,7 +28,7 @@ and install prezto:
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 ```
 
-Re-link clobbered prezto customizations (in `$HOME/.homeshick/repos/dotfiles/.zsh/.zprezto/runcoms`)
+Re-link clobbered prezto customizations (in `$HOME/.homeshick/repos/dotfiles/.zsh/.zprezto/runcoms`), and approve overrides:
 ```
 homeshick link dotfiles
 ```
