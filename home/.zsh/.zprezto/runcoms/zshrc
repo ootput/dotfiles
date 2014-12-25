@@ -50,7 +50,7 @@ setopt NO_HUP
 # only fools wouldn't do this ;-)
 export EDITOR="vim"
  
-setopt IGNORE_EOF
+#setopt IGNORE_EOF
  
 # If I could disable Ctrl-s completely I would!
 setopt NO_FLOW_CONTROL
@@ -92,7 +92,6 @@ bindkey -M vicmd "q" push-line
  
 # it's like, space AND completion. Gnarlbot.
 bindkey -M viins ' ' magic-space 
-
 #
 # Retain useful readline keybinds
 #
@@ -120,6 +119,3 @@ bindkey '^[.' insert-last-word
 
 # Show the man-page or other helpful infos with Meta-h
 bindkey '^[h' run-help
-
-# Delete character or list
-bindkey '^D' delete-char-or-list
