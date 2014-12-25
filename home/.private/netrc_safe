@@ -13,3 +13,7 @@ machine mail.messagingengine.com
 machine pushkin
         login joe
         password ***
+
+machine github.com
+        login ootput
+        password ***
