@@ -110,3 +110,16 @@ bindkey '^w' backward-kill-word
 
 # ctrl-r starts searching history backward
 bindkey '^r' history-incremental-search-backward
+
+# Kill input from the current point to the end of line with Ctrl-k
+bindkey '^k' kill-line
+
+# Insert and go through the "last words" of previous commands with Meta-.
+# (or Escape-. for that matter).
+bindkey '^[.' insert-last-word
+
+# Show the man-page or other helpful infos with Meta-h
+bindkey '^[h' run-help
+
+# Delete character or list
+bindkey '^D' delete-char-or-list
