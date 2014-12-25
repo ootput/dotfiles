@@ -33,7 +33,6 @@
   " Required if you would like to use sql completion.
   "Bundle 'dbext.vim'
   "
-  "Bundle 'cppcomplete'
   Bundle 'OmniCppComplete'
   Bundle 'tpope/vim-unimpaired'
   Bundle 'pdurbin/vim-tsv'
