@@ -22,10 +22,16 @@ Clone dotfiles:
 homeshick clone https://github.com/ootput/dotfiles.git
 ```
 
-and install prezto:
+Install prezto:
 
 ```
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+```
+
+Install spf13:
+
+```
+curl https://j.mp/spf13-vim3 -L > spf13-vim.sh && sh spf13-vim.sh
 ```
 
 Re-link clobbered prezto customizations (in `$HOME/.homeshick/repos/dotfiles/.zsh/.zprezto/runcoms`), and approve overrides:
