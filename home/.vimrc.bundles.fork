@@ -6,7 +6,7 @@
 " Those plugins don't properly work for me with basic configuration.
 
 " General
-UnBundle 'altercation/vim-colors-solarized'
+"UnBundle 'altercation/vim-colors-solarized'
 "UnBundle 'bling/vim-airline'
 "UnBundle 'bling/vim-bufferline'
 "UnBundle 'flazz/vim-colorschemes'
