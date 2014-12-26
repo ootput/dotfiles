@@ -1,0 +1,108 @@
+" Bundles {
+" UnBundle unnecessary Vundle bundles (plugins)
+" Remember to run ':BundleClean!' after this to remove
+" the existing directories.
+"
+" Those plugins don't properly work for me with basic configuration.
+
+" General
+UnBundle 'altercation/vim-colors-solarized'
+"UnBundle 'bling/vim-airline'
+"UnBundle 'bling/vim-bufferline'
+"UnBundle 'flazz/vim-colorschemes'
+"UnBundle 'gcmt/wildfire.vim'
+"UnBundle 'jistr/vim-nerdtree-tabs'
+"UnBundle 'kana/vim-textobj-indent'
+"UnBundle 'kana/vim-textobj-user'
+"UnBundle 'kien/ctrlp.vim'
+"UnBundle 'kristijanhusak/vim-multiple-cursors'
+"UnBundle 'Lokaltog/powerline'
+"UnBundle 'Lokaltog/vim-easymotion'
+"UnBundle 'Lokaltog/vim-powerline'
+"UnBundle 'matchit.zip'
+"UnBundle 'mbbill/undotree'
+"UnBundle 'mhinz/vim-signify'
+"UnBundle 'nathanaelkane/vim-indent-guides'
+"UnBundle 'osyo-manga/vim-over'
+"UnBundle 'scrooloose/nerdtree'
+"UnBundle 'spf13/vim-autoclose'
+"UnBundle 'spf13/vim-colors'
+"UnBundle 'tacahiroy/ctrlp-funky'
+UnBundle 'tpope/vim-abolish.git'
+"UnBundle 'tpope/vim-repeat'
+"UnBundle 'tpope/vim-surround'
+"UnBundle 'vim-scripts/restore_view.vim'
+"UnBundle 'vim-scripts/sessionman.vim'
+
+" Writing
+"UnBundle 'reedes/vim-litecorrect'
+"UnBundle 'reedes/vim-textobj-sentence'
+"UnBundle 'reedes/vim-textobj-quote'
+"UnBundle 'reedes/vim-wordy'
+
+" General Programming
+"UnBundle 'godlygeek/tabular'
+"UnBundle 'majutsushi/tagbar'
+"UnBundle 'mattn/gist-vim'
+"UnBundle 'scrooloose/nerdcommenter'
+"UnBundle 'scrooloose/syntastic'
+"UnBundle 'tpope/vim-commentary'
+"UnBundle 'tpope/vim-fugitive'
+
+" Misc
+UnBundle 'cespare/vim-toml'
+UnBundle 'quentindecock/vim-cucumber-align-pipes'
+UnBundle 'saltstack/salt-vim'
+"UnBundle 'scrooloose/nerdtree'
+UnBundle 'tpope/vim-cucumber'
+UnBundle 'wting/rust.vim'
+
+" PHP
+UnBundle 'spf13/PIV'
+UnBundle 'arnaud-lb/vim-php-namespace'
+UnBundle 'beyondwords/vim-twig'
+
+" Python
+UnBundle 'klen/python-mode'
+UnBundle 'yssource/python.vim'
+UnBundle 'python_match.vim'
+UnBundle 'pythoncomplete'
+
+" Javascript
+UnBundle 'elzr/vim-json'
+UnBundle 'groeneweg/vim-less'
+UnBundle 'pangloss/vim-javascript'
+UnBundle 'briancollins/vim-jst'
+UnBundle 'kchmck/vim-coffee-script'
+
+" Scala
+UnBundle 'derekwyatt/vim-scala'
+UnBundle 'derekwyatt/vim-sbt'
+UnBundle 'xptemplate'
+
+" Ruby
+UnBundle 'tpope/vim-rails'
+
+" Haskell
+UnBundle 'travitch/hasksyn'
+UnBundle 'dag/vim2hs'
+UnBundle 'Twinside/vim-haskellConceal'
+UnBundle 'Twinside/vim-haskellFold'
+UnBundle 'lukerandall/haskellmode-vim'
+UnBundle 'eagletmt/neco-ghc'
+UnBundle 'eagletmt/ghcmod-vim'
+UnBundle 'Shougo/vimproc'
+UnBundle 'adinapoli/cumino'
+UnBundle 'bitc/vim-hdevtools'
+
+" HTML
+UnBundle 'gorodinskiy/vim-coloresque'
+UnBundle 'tpope/vim-haml'
+
+" Puppet
+UnBundle 'rodjek/vim-puppet'
+
+" Go Lang
+UnBundle 'fatih/vim-go'
+
+" }

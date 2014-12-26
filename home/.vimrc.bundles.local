@@ -1,40 +1,126 @@
-" General {
-
-  " Most prefer to automatically switch to the current file directory when
-  " a new buffer is opened; to prevent this behavior, add the following to
-  " your .vimrc.bundles.local file:
-  let g:spf13_no_autochdir = 1
-  "
-  " Plugins {
-  " }
-    " vim-kolor theme {
-    let g:kolor_italic=1                    " Enable italic. Default: 1
-    let g:kolor_bold=1                      " Enable bold. Default: 1
-    let g:kolor_underlined=0                " Enable underline. Default: 0
-    let g:kolor_alternative_matchparen=0    " Gray 'MatchParen' color. Default: 0
-    "colorscheme kolor
-  " }
-    " grb256 theme {
-    let g:grb256_italic=1                    " Enable italic. Default: 1
-    let g:grb256_bold=1                      " Enable bold. Default: 1
-    let g:grb256_underlined=0                " Enable underline. Default: 0
-    let g:grb256_alternative_matchparen=0    " Gray 'MatchParen' color. Default: 0
-    colorscheme grb256
-  " }
-
+" Personal Bundles {
+" Instead of using vim.org to find and install plugins manually, it's easier
+" to just run something like :BundleSearch! ... . Then navigate to and select
+" bundle of your choice and press i.
+" If you want to keep it - copy that Bundle ... line to your .vimrc file.
+Bundle 'OmniCppComplete'
+Bundle 'tpope/vim-unimpaired'
+Bundle 'pdurbin/vim-tsv'
 " }
 
-" Personal bundles {
-  " Instead of using vim.org to find and install plugins manually, it's easier
-  " to just run something like :BundleSearch! ... . Then navigate to and select
-  " bundle of your choice and press i.
-  " If you want to keep it - copy that Bundle ... line to your .vimrc file.
+" Visual Changes {
+" Colors {
+" vim-kolor theme {
+let g:kolor_italic=1                    " Enable italic. Default: 1
+let g:kolor_bold=1                      " Enable bold. Default: 1
+let g:kolor_underlined=0                " Enable underline. Default: 0
+let g:kolor_alternative_matchparen=0    " Gray 'MatchParen' color. Default: 0
+"color kolor
+" }
+" grb256 theme {
+let g:grb256_italic=1                    " Enable italic. Default: 1
+let g:grb256_bold=1                      " Enable bold. Default: 1
+let g:grb256_underlined=0                " Enable underline. Default: 0
+let g:grb256_alternative_matchparen=0    " Gray 'MatchParen' color. Default: 0
+"color grb256
+" }
+" hemisu theme {
+let g:hemisu_italic=1                    " Enable italic. Default: 1
+let g:hemisu_bold=1                      " Enable bold. Default: 1
+let g:hemisu_underlined=0                " Enable underline. Default: 0
+let g:hemisu_alternative_matchparen=0    " Gray 'MatchParen' color. Default: 0
+color hemisu
+" }
+" }
+" Statusline {
+" Override default status line by disabling unnecessary fugitive part.
+if has('statusline')
+    set laststatus=2
+    " Broken down into easily includeable segments
+    set statusline=%<%f\                     " Filename
+    set statusline+=%w%h%m%r                 " Options
+    set statusline+=%{fugitive#statusline()} " Git Hotness
+    set statusline+=\ [%{&ff}/%Y]            " Filetype
+    set statusline+=\ [%{getcwd()}]          " Current dir
+    set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
+endif
+" }
+" }
 
-  " Required if you would like to use sql completion.
-  "Bundle 'dbext.vim'
-  "
-  Bundle 'OmniCppComplete'
-  Bundle 'tpope/vim-unimpaired'
-  Bundle 'pdurbin/vim-tsv'
-
+" Customization {
+" General {
+" A list of file patterns which will be used to exclude
+" files when completing file or directory names.
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.o,*.obj
+let g:spf13_no_autochdir = 1
+" }
+" Plugins {
+" Airline + Restore View workaround for spf13/spf13-vim#423 issue {
+au VimEnter * AirlineToggle
+au VimEnter * AirlineToggle
+" }
+" vim-autoclose {
+" Note: in Vim files (including .vimrc), you may not want pairing of "
+" because it is the comment character. If you set a value for
+" g:autoclose_vim_commentmode, the " character will not be paired if Vim
+" considers the current buffer to be a Vim file.
+let g:autoclose_vim_commentmode = 1
+let g:autoclose_on = 0
+" }
+" vim-airline {
+" Enables powerlines fonts.
+let g:airline_powerline_fonts = 1
+" Automatically displays all buffers when there's only one tab open.
+let g:airline#extensions#tabline#enabled = 1
+" Separators can be configured independently for the tabline, so here is
+" how you can define "straight" tabs
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+" }
+" ctrlp {
+"When starting up, CtrlP sets its local working directory according to
+"this variable: 0 - disable this feature
+"let g:ctrlp_working_path_mode=0
+let g:ctrlp_show_hidden = 1
+" Set no max file limit
+let g:ctrlp_max_files = 0
+" Use a leader instead of the actual named binding
+nmap <leader>p :CtrlP<cr>
+" Easy bindings for its various modes
+nnoremap <leader>bb :CtrlPBuffer<cr>
+nnoremap <leader>bm :CtrlPMixed<cr>
+nnoremap <leader>bs :CtrlPMRU<cr>
+let g:ctrlp_custom_ignore = {
+            \ 'dir':  '\v[\/](\.(git|hg|svn)|\_site)$',
+            \ 'file': '\v\.(exe|so|dll|class|png|jpg|jpeg)$',
+            \}
+" Fallback search ignores .svn directories.
+let g:ctrlp_user_command = {
+            \ 'types': {
+            \ 1: ['.git', 'cd %s && git ls-files && cd -'],
+            \ 2: ['.hg', 'hg --cwd %s locate -I .'],
+            \ },
+            \ 'fallback': 'find %s -type d -name .svn -prune -o -type f -name "*[o|a]$" -prune -o -type f -print'
+            \ }
+" }
+" OmniCppComplete {
+let OmniCpp_NamespaceSearch = 1
+let OmniCpp_GlobalScopeSearch = 1
+let OmniCpp_ShowAccess = 1
+let OmniCpp_ShowPrototypeInAbbr = 1 " show function parameters
+let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
+" Lets Neocompletecache takes care about auto completion.
+let OmniCpp_MayCompleteDot = 0 " autocomplete after .
+let OmniCpp_MayCompleteArrow = 0 " autocomplete after ->
+let OmniCpp_MayCompleteScope = 0 " autocomplete after ::
+" Without preview option (working with Neocompletecache).
+"set completeopt=menuone,menu,longest
+set completeopt-=preview
+" As Neocompletecache does not support preview window,
+" this functionality has been deliberately disabled.
+" automatically open and close the popup menu / preview window
+"au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+"set completeopt=menuone,menu,longest,preview
+" }
+" }
 " }
