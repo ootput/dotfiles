@@ -37,4 +37,4 @@ cabbrev fdn http://forums.debian.net
 cabbrev opt http://memberservices.optusnet.com.au/myusage
 cabbrev ez http://eztv.it
 
-" vim: set ft=vimperator:
+" vim: set ts=2 sw=2 tw=0 et ft=vim :

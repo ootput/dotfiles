@@ -35,3 +35,5 @@ hi BufTab color: #ee9a00; background: #080808; font-weight: normal;
 hi BufTabSelected color: #ee9a00; background: #080808; font-weight: bold;
 set editor='gvim -f +<line> +"sil! call cursor(0, <column>)" <file>'
 "set editor='urxvt -name foxvim -e vim -f +<line> +"sil! call cursor(0, <column>)" <file>'
+
+" vim: set ts=2 sw=2 tw=0 et ft=vim :
