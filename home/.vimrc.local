@@ -1,16 +1,4 @@
-inoremap kj <Esc>
-inoremap <Left>  <NOP>
-inoremap <Right> <NOP>
-inoremap <Up>    <NOP>
-inoremap <Down>  <NOP>
-
-nmap <Leader>cd :lcd %:p:h<CR>
-
-"Press F7 to format and return the same line where you were
-map <F7> mzgg=G`z<CR>
-
-"Press i to toggle the appearance of the file tree in netrw (nerdtree style)
-let g:netrw_liststyle=3
+" vim: set sw=4 ts=4 sts=4 et tw=78 foldmarker={,} foldlevel=0 foldmethod=marker spell:
 
 " Buffer Management {
 
@@ -37,27 +25,6 @@ if bufname('%') == ''
     set bufhidden=wipe
 endif
 "}
-
-" Toggle relative numbering
-function! ToggleNumbering()
-    if &relativenumber
-        set number
-        set norelativenumber
-    else
-        set relativenumber
-        set nonumber
-    endif
-endfunc
-noremap <leader>n :call ToggleNumbering()<cr>
-
-" Bind F5 to remove trailing whitespace or tabs in your files
-nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
-
-" <Control>+h will move the cursor to the beginning of the text on that line
-" and change the first word
-map <silent> <C-h> ^cw
-"  in visual mode hitting D will duplicate whatever’s selected directly below
-vmap D y'>p
 
 " Customization Based on Current Directory {
 " This allows me to put a .vim.custom file in every directory to load commands
@@ -112,6 +79,9 @@ let g:indent_guides_enable_on_vim_startup=0
 set number
 set scrolloff=9999
 set viewoptions=cursor,folds,slash,unix  " suggested view settings
+"Press i to toggle the appearance of the file tree in netrw (nerdtree style)
+let g:netrw_liststyle=3
+
 " }
 
 " GUI Settings {
@@ -140,7 +110,6 @@ let &tabstop=g:q_indent_width  " Use 2 space chars to display tab char
 let &softtabstop=g:q_indent_width  " Use 2 space chars instead of tab chars
 let &shiftwidth=g:q_indent_width  " indent with 2 spaces, represents >> shift
 set expandtab  " put spaces instead of tab character
-set autoindent
 
 "set textwidth=80  " maximum text width
 set textwidth=0  " disables textwidth to make completion
@@ -171,7 +140,6 @@ let g:q_ctags_output_file = "" . g:q_ctags_top_dir . "/tags"
 set tags += "" . g:q_ctags_output_file
 " }
 
-
 " C/C++ Settings {
 " Automatically apply C++ syntax hightlight to C files.
 au FileType c set filetype=cpp
@@ -183,11 +151,53 @@ au BufRead * if search('\M-*- C++ -*-', 'n', 1) | setlocal ft=cpp | endif
 " }"
 
 " Keyboard mappings {
+" Use vim navigation only {
+inoremap kj <Esc>
+inoremap <Left>  <NOP>
+inoremap <Right> <NOP>
+inoremap <Up>    <NOP>
+inoremap <Down>  <NOP>
+" }
+" Misc {
 " Does not automatically maximize windows on switching
 map <C-J> <C-W>j
 map <C-K> <C-W>k
 map <C-L> <C-W>l
 map <C-H> <C-W>h
+
+nmap <Leader>cd :lcd %:p:h<CR>
+
+"Press F7 to format and return the same line where you were
+map <F7> mzgg=G`z<CR>
+
+" Shows svn blame in visual mode on highlighted lines.
+vmap <Leader>bl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+
+" Press Space to turn off highlighting and clear any message already displayed
+nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>  
+
+" Bind F5 to remove trailing whitespace or tabs in your files
+nnoremap <silent> <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>:retab<CR>
+
+" <Control>+h will move the cursor to the beginning of the text on that line
+" and change the first word
+map <silent> <C-h> ^cw
+"  in visual mode hitting D will duplicate whatever’s selected directly below
+vmap D y'>p
+" }
+
+" Toggle relative numbering {
+function! ToggleNumbering()
+    if &relativenumber
+        set number
+        set norelativenumber
+    else
+        set relativenumber
+        set nonumber
+    endif
+endfunc
+noremap <leader>n :call ToggleNumbering()<cr>
+" }
 
 " Grep {
 " Recommended installing ack-grep, which is a grep-like utility designed
@@ -204,10 +214,7 @@ map <Leader>qp :cprev<CR>
 map <Leader>qn :cnext<CR>
 " }
 
-" Shows svn blame in visual mode on highlighted lines.
-vmap <Leader>bl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
-
-" Ctags generation.
+" Ctags generation. {
 "
 " Re-generate ctags
 " To get mapping characters, press Ctrl-V while in Insert mode, and then the required key.
@@ -231,7 +238,7 @@ execute "map <Leader>8 :"
             \ . "--langmap=c:,c++:+.c "
             \ . "--exclude=*.so "
             \ . "-f " g:q_ctags_output_file . " " . g:q_ctags_top_dir . "<CR><CR>"
-
-" Press Space to turn off highlighting and clear any message already displayed
-nnoremap <silent> <Space> :nohlsearch<Bar>:echo<CR>  
 " }
+
+" }
+
