@@ -8,29 +8,29 @@
 shopt -s extglob
 
 find * -depth -type d -print0 | while IFS= read -r -d '' dir; do
-    newdir=$(printf "%s" "$dir" | LC_ALL=C tr 'A-Z .' 'a-z__');
-    # remove adjacent underscores
-    newdir=${newdir//_+(_)/_}
-    if [ ! -d "$newdir" ]; then
-        mv -iv "$dir" "$newdir";
-    fi
+newdir=$(printf "%s" "$dir" | LC_ALL=C tr 'A-Z .' 'a-z__');
+# remove adjacent underscores
+newdir=${newdir//_+(_)/_}
+if [ ! -d "$newdir" ]; then
+  mv -iv "$dir" "$newdir";
+fi
 done
 
 find * -type f -print0 | while IFS= read -r -d '' file; do
-    base=${file%.*}
-    ext=${file##*.}
-    newbase=$(printf "%s" "$base" | LC_ALL=C tr 'A-Z .' 'a-z__');
-    newext=$(printf "%s" "$ext" | LC_ALL=C tr 'A-Z ' 'a-z_');
-    newbase=${newbase//_+(_)/_}
-    newext=${newext//_+(_)/_}
+base=${file%.*}
+ext=${file##*.}
+newbase=$(printf "%s" "$base" | LC_ALL=C tr 'A-Z .' 'a-z__');
+newext=$(printf "%s" "$ext" | LC_ALL=C tr 'A-Z ' 'a-z_');
+newbase=${newbase//_+(_)/_}
+newext=${newext//_+(_)/_}
 
-    if [ "$base" != "$newbase" ]; then
-        if [ "$base" != "$ext" ]; then
-            mv -iv "$file" "$newbase"."$newext"
-        else
-            mv -iv "$base" "$newbase"
-        fi
-    fi
+if [ "$base" != "$newbase" ]; then
+  if [ "$base" != "$ext" ]; then
+    mv -iv "$file" "$newbase"."$newext"
+  else
+    mv -iv "$base" "$newbase"
+  fi
+fi
 done
 
 exit 0

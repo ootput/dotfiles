@@ -2,8 +2,8 @@
 
 [ -e "/tmp/.X0-lock" ] && DISPLAY=":0.0"
 if [ -n "$DISPLAY" ]; then
-gvim --remote-silent "$@" || gvim "$@"
+  gvim --remote-silent "$@" || gvim "$@"
 else
-vim --remote-silent "$@" || vim "$@"
+  vim --remote-silent "$@" || vim "$@"
 fi
 exit 0
