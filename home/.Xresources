@@ -75,15 +75,15 @@ xscreensaver.passwd.thermometer.width:       8
 
 ! URxvt settings -------------------------------------------------------------{
 
-!URxvt.font: xft:Terminus:style=Regular:pixelsize=15:antialias=false
-!URxvt.boldFont: xft:Terminus:style=Bold:pixelsize=15:antialias=false
-!URxvt.italicFont: xft:Terminus:style=Italic:pixelsize=15:antialias=false
-!URxvt.boldItalicFont: xft:Terminus:style=Bold Italic:pixelsize=15:antialias=false
+!URxvt.font: xft:Terminus:style=Regular:pixelsize=16:antialias=false
+!URxvt.boldFont: xft:Terminus:style=Bold:pixelsize=16:antialias=false
+!URxvt.italicFont: xft:Terminus:style=Italic:pixelsize=16:antialias=false
+!URxvt.boldItalicFont: xft:Terminus:style=Bold Italic:pixelsize=16:antialias=false
 
-URxvt.font: xft:Dina:style=Regular:pixelsize=16:antialias=false
-URxvt.boldFont: xft:Dina:style=Bold:pixelsize=16:antialias=false
-URxvt.italicFont: xft:Dina:style=Italic:pixelsize=16:antialias=false
-URxvt.boldItalicFont: xft:Dina:style=Bold Italic:pixelsize=16:antialias=false
+URxvt.font: xft:Dina:style=Regular:pixelsize=18:antialias=false
+URxvt.boldFont: xft:Dina:style=Bold:pixelsize=18:antialias=false
+URxvt.italicFont: xft:Dina:style=Italic:pixelsize=18:antialias=false
+URxvt.boldItalicFont: xft:Dina:style=Bold Italic:pixelsize=18:antialias=false
 
 !URxvt.font: xft:Envy Code R:style=Regular:pixelsize=15
 !URxvt.boldFont: xft:Envy Code R:style=Bold:pixelsize=15
@@ -94,6 +94,7 @@ URxvt.boldItalicFont: xft:Dina:style=Bold Italic:pixelsize=16:antialias=false
 !URxvt.boldFont: xft:Consolas:style=Bold:pixelsize=13
 !URxvt.italicFont: xft:Consolas:style=Italic:pixelsize=13
 !URxvt.boldItalicFont: xft:Consolas:style=Bold Italic:pixelsize=13
+
 !URxvt.letterSpace: -2
 !URxvt.letterSpace: -1
 URxvt.letterSpace: 0
