@@ -37,4 +37,4 @@ ehthumbs.db
 Thumbs.db
 
 # Descartes specific #
-bin/tmux-shells
+tmux-shells
