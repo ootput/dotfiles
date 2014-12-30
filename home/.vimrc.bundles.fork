@@ -25,7 +25,7 @@
 "UnBundle 'nathanaelkane/vim-indent-guides'
 "UnBundle 'osyo-manga/vim-over'
 "UnBundle 'scrooloose/nerdtree'
-"UnBundle 'spf13/vim-autoclose'
+UnBundle 'spf13/vim-autoclose'
 "UnBundle 'spf13/vim-colors'
 "UnBundle 'tacahiroy/ctrlp-funky'
 UnBundle 'tpope/vim-abolish.git'

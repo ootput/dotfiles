@@ -6,6 +6,8 @@
 Bundle 'OmniCppComplete'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'pdurbin/vim-tsv'
+Bundle 'jiangmiao/auto-pairs'
+
 " }
 
 " Visual Changes {
@@ -58,14 +60,6 @@ let g:spf13_no_autochdir = 1
 " Airline + Restore View workaround for spf13/spf13-vim#423 issue {
 au VimEnter * AirlineToggle
 au VimEnter * AirlineToggle
-" }
-" vim-autoclose {
-" Note: in Vim files (including .vimrc), you may not want pairing of "
-" because it is the comment character. If you set a value for
-" g:autoclose_vim_commentmode, the " character will not be paired if Vim
-" considers the current buffer to be a Vim file.
-let g:autoclose_vim_commentmode = 1
-let g:autoclose_on = 0
 " }
 " vim-airline {
 " Enables powerlines fonts.
