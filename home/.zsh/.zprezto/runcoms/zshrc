@@ -119,3 +119,8 @@ bindkey '^[.' insert-last-word
 
 # Show the man-page or other helpful infos with Meta-h
 bindkey '^[h' run-help
+
+## ALIASES
+
+alias gpom='git push -u origin master'
+alias gca='git commit -a'
