@@ -124,3 +124,5 @@ bindkey '^[h' run-help
 
 alias gpom='git push -u origin master'
 alias gca='git commit -a'
+alias hp='homeshick pull'
+alias hc='homeshick check'
