@@ -7,6 +7,9 @@ Bundle 'OmniCppComplete'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'pdurbin/vim-tsv'
 Bundle 'jiangmiao/auto-pairs'
+Bundle 'tpope/vim-vinegar'
+Bundle 'terryma/vim-expand-region'
+Bundle 'tyru/open-browser.vim'
 
 " }
 
@@ -32,6 +35,15 @@ let g:hemisu_bold=1                      " Enable bold. Default: 1
 let g:hemisu_underlined=0                " Enable underline. Default: 0
 let g:hemisu_alternative_matchparen=0    " Gray 'MatchParen' color. Default: 0
 "color hemisu
+" }
+" gruvbox theme {
+let g:gruvbox_italic=1                    " Enable italic. Default: 1
+let g:gruvbox_bold=1                      " Enable bold. Default: 1
+let g:gruvbox_underlined=0                " Enable underline. Default: 0
+let g:gruvbox_alternative_matchparen=0    " Gray 'MatchParen' color. Default: 0
+let g:gruvbox_termcolors=256
+let g:gruvbox_visibility="normal"  
+"color gruvbox
 " }
 " }
 " Statusline {
@@ -63,7 +75,7 @@ au VimEnter * AirlineToggle
 " }
 " vim-airline {
 " Enables powerlines fonts.
-let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 1
 " Automatically displays all buffers when there's only one tab open.
 let g:airline#extensions#tabline#enabled = 1
 " Separators can be configured independently for the tabline, so here is

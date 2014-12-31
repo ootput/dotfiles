@@ -80,10 +80,13 @@ xscreensaver.passwd.thermometer.width:       8
 !URxvt.italicFont: xft:Terminus:style=Italic:pixelsize=16:antialias=false
 !URxvt.boldItalicFont: xft:Terminus:style=Bold Italic:pixelsize=16:antialias=false
 
-URxvt.font: xft:Dina:style=Regular:pixelsize=18:antialias=false
-URxvt.boldFont: xft:Dina:style=Bold:pixelsize=18:antialias=false
-URxvt.italicFont: xft:Dina:style=Italic:pixelsize=18:antialias=false
-URxvt.boldItalicFont: xft:Dina:style=Bold Italic:pixelsize=18:antialias=false
+!URxvt.font: xft:Dina:style=Regular:pixelsize=20:antialias=false
+!URxvt.boldFont: xft:Dina:style=Bold:pixelsize=20:antialias=false
+!URxvt.italicFont: xft:Dina:style=Italic:pixelsize=20:antialias=false
+!URxvt.boldItalicFont: xft:Dina:style=Bold Italic:pixelsize=20:antialias=false
+
+URxvt.font: -xos4-terminus-medium-*-*-*-16-*-*-*-*-iso10646-1, -misc-fixed-medium-r-normal--14-140-75-75-c-90-iso10646-1
+URxvt.boldFont: -xos4-terminus-bold-*-*-*-16-*-*-*-*-iso10646-1, -misc-fixed-bold-r-normal--14-140-75-75-c-90-iso10646-1
 
 !URxvt.font: xft:Envy Code R:style=Regular:pixelsize=15
 !URxvt.boldFont: xft:Envy Code R:style=Bold:pixelsize=15
@@ -102,6 +105,7 @@ URxvt.letterSpace: 0
 URxvt.cursorBlink: true
 URxvt.cursorColor: #FFFFFF
 URxvt.cutchars: "()*,<>\"[]{}|'"
+URxvt.imLocale: en_AU.utf8
 URxvt.inheritPixmap: true
 URxvt.print-pipe: "cat > $(echo $HOME/urxvt.dump.$(date +'%Y%M%d%H%m%S'))"
 URxvt.saveLines: 32874
