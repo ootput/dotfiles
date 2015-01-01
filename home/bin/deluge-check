@@ -1,0 +1,21 @@
+#!/usr/local/bin/bash
+export DISPLAY=:0 #needed if you are running a simple gui app.
+
+process=deluged
+makerun="deluged"
+webrun="deluge-web"
+
+
+if ! [ `ps ax | grep -v grep | grep $process > /dev/null` ]
+then
+    echo "deluge daemon was not running"
+    /usr/local/bin/deluged &
+    echo "Date: " $(date) " Deluge daemon restarted">> /tmp/deluged.log
+fi
+if ! [ `ps ax | grep -v grep | grep $webrun > /dev/null` ]
+then
+    echo "deluge-web was not running"
+    /usr/local/bin/deluge-web &
+    echo "Date: " $(date) " Deluge web service restarted">> /tmp/deluged.log
+fi
+exit
