@@ -10,6 +10,11 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# Source Github TOKEN
+if [[ -s "$HOME/.private/github_auth" ]]; then
+  source "$HOME/.private/github_auth"
+fi
+
 # Customize to your needs...
 export PATH="$HOME/bin:$PATH"
 export KEYTIMEOUT=1
