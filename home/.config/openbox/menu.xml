@@ -50,6 +50,14 @@
 			</action>
 		</item>
 		<separator/>
+		<item label="Filebot">
+			<action name="Execute">
+				<command>
+					filebot
+				</command>
+			</action>
+		</item>
+		<separator/>
 		<menu id="accessories" label="Accessories">
 		    <item label="Archive Manager">
 				<action name="Execute">
