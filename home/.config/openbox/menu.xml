@@ -14,6 +14,14 @@
 			</action>
 		</item>
 		<separator/>
+        <item label="Tmux Shells">
+			<action name="Execute">
+				<command>
+					tt shells
+				</command>
+			</action>
+		</item>
+		<separator/>
 		<item label="Terminal">
 			<action name="Execute">
 				<command>
@@ -38,7 +46,7 @@
 		<item label="Text Editor">
 			<action name="Execute">
 				<command>
-					gvim
+          urxvtc -e vim
 				</command>
 			</action>
 		</item>
@@ -66,30 +74,9 @@
 					</command>
 				</action>
 			</item>
-			<item label="Text Editor">
-				<action name="Execute">
-					<command>
-						urxvtc -e vim
-					</command>
-				</action>
-			</item>
 			<item label="Task Manager (htop)">
 				<action name="Execute">
                     <command>urxvtc -e "htop"</command>
-				</action>
-			</item>
-			<item label="Urxvt Terminal">
-				<action name="Execute">
-					<command>
-						urxvtc
-					</command>
-				</action>
-			</item>
-			<item label="Thunar File Manager">
-				<action name="Execute">
-					<command>
-						thunar
-					</command>
 				</action>
 			</item>
 			<item label="Thunar File Manager (root)">
@@ -159,6 +146,13 @@
 				<action name="Execute">
 					<command>
 						vlc
+					</command>
+				</action>
+			</item>
+			<item label="Subtitle Editor">
+				<action name="Execute">
+					<command>
+						gaupol
 					</command>
 				</action>
 			</item>
@@ -342,7 +336,7 @@
 				<item label="Edit config file">
 					<action name="Execute">
 						<command>
-							urxvtc -e "gvim ~/.Xresources"
+							urxvtc -e gvim ~/.Xresources
 						</command>
 					</action>
 				</item>
