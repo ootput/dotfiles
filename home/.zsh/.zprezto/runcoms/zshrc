@@ -132,3 +132,15 @@ alias gca='git commit -a'
 alias hp='homeshick pull'
 alias hc='homeshick check'
 alias subrename='for i in *.srt ; do mv $i ${i:r}.en.srt ; done'
+
+if [[ $- == *i* && -z "$TMUX"  ]]; then
+  #     Look for unattached sessions
+  SESSION=$(tmux ls | sed -e '/(attached)$/d' -e 's/:.*$//' | head -n 1)
+  if [ -z $SESSION  ]; then
+    # None found!
+    exec tt shells
+  else
+    # Got one!
+    exec tmux attach -t $SESSION
+  fi
+fi
