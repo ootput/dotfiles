@@ -14,10 +14,17 @@
 			</action>
 		</item>
 		<separator/>
-        <item label="Tmux Shells">
+        <item label="Tennyson Shells">
 			<action name="Execute">
 				<command>
 					tt shells
+				</command>
+			</action>
+		</item>
+        <item label="Descartes Shells">
+			<action name="Execute">
+				<command>
+					urxvtc -e ssh descartes
 				</command>
 			</action>
 		</item>
