@@ -105,6 +105,7 @@ URxvt.letterSpace: 0
 URxvt.cursorBlink: true
 URxvt.cursorColor: #FFFFFF
 URxvt.cutchars: "()*,<>\"[]{}|'"
+URxvt.geometry: 100x40
 URxvt.imLocale: en_AU.utf8
 URxvt.inheritPixmap: true
 URxvt.print-pipe: "cat > $(echo $HOME/urxvt.dump.$(date +'%Y%M%d%H%m%S'))"
