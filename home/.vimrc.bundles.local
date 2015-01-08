@@ -10,6 +10,7 @@ Bundle 'jiangmiao/auto-pairs'
 Bundle 'tpope/vim-vinegar'
 Bundle 'terryma/vim-expand-region'
 Bundle 'tyru/open-browser.vim'
+Bundle 'christoomey/vim-tmux-navigator'
 
 " }
 

@@ -80,7 +80,15 @@ bindkey '\e[1~' beginning-of-line
 bindkey '\e[4~' end-of-line
  
 # Bind 'kj' to Escape
-bindkey -M viins 'kj' vi-cmd-mode
+bindkey 'kj' vi-cmd-mode
+
+# Bind to both possible orders in which the keys could be pressed.
+# Move all the way to the left
+bindkey ';l' end-of-line
+bindkey 'l;' end-of-line
+# Move all the way to the right
+bindkey ';h' beginning-of-line
+bindkey 'h;' beginning-of-line
 
 # Incremental search is elite!
 bindkey -M vicmd "/" history-incremental-search-backward
@@ -107,7 +115,7 @@ bindkey '^N' down-history
 # backspace and ^h working even after
 # returning from command mode
 bindkey '^?' backward-delete-char
-bindkey '^h' backward-delete-char
+#bindkey '^h' backward-delete-char
 
 # ctrl-w removed word backwards
 bindkey '^w' backward-kill-word
@@ -116,7 +124,7 @@ bindkey '^w' backward-kill-word
 bindkey '^r' history-incremental-search-backward
 
 # Kill input from the current point to the end of line with Ctrl-k
-bindkey '^k' kill-line
+#bindkey '^k' kill-line
 
 # Insert and go through the "last words" of previous commands with Meta-.
 # (or Escape-. for that matter).
