@@ -54,6 +54,9 @@ setopt NO_HUP
  
 # only fools wouldn't do this ;-)
 export EDITOR="vim"
+
+# use local Ranger rc.conf
+export RANGER_LOAD_DEFAULT_RC="false"
  
 #setopt IGNORE_EOF
  

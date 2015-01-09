@@ -8,10 +8,10 @@ tmux split-window -h -p 35 'exec ncmpcpp'
 tmux split-window -v 'exec weechat-curses'
 tmux select-pane -L
 tmux new-window -t shells:2 "sudo -i"
-tmux new-window -t shells:3 "vifm"
+tmux new-window -t shells:3 "ranger"
 sleep 1
 tmux select-window -t shells:3
-tmux rename-window "vifm"
+tmux rename-window "ranger"
 tmux select-window -t shells:2
 tmux rename-window "root"
 tmux select-window -t shells:1
