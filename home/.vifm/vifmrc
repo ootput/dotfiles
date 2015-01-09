@@ -20,6 +20,7 @@
 " This probably shouldn't be an option.
 
 set trash
+set trashdir=%r/.vifm-trash,$HOME/.vifm/trash
 
 " This is how many directories to store in the directory history.
 
