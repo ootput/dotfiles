@@ -10,7 +10,8 @@ tmux new-window -t shells:2 "sudo -i"
 tmux new-window -t shells:3 "vifm"
 #tmux new-window -t shells:3 "ranger"
 tmux select-window -t shells:3
-tmux rename-window "ranger"
+tmux rename-window "vifm"
+#tmux rename-window "ranger"
 tmux select-window -t shells:2
 tmux rename-window "root"
 tmux select-window -t shells:1
