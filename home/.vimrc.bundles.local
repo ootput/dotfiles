@@ -11,6 +11,8 @@ Bundle 'tpope/vim-vinegar'
 Bundle 'terryma/vim-expand-region'
 Bundle 'tyru/open-browser.vim'
 Bundle 'christoomey/vim-tmux-navigator'
+Bundle 'xolox/vim-misc'
+Bundle 'xolox/vim-notes'
 
 " }
 
@@ -109,6 +111,10 @@ let g:ctrlp_user_command = {
             \ },
             \ 'fallback': 'find %s -type d -name .svn -prune -o -type f -name "*[o|a]$" -prune -o -type f -print'
             \ }
+" }
+" Notes {
+let g:notes_suffix = '.txt'
+let g:notes_directories = ['~/documents/vim-notes']
 " }
 " OmniCppComplete {
 let OmniCpp_NamespaceSearch = 1
