@@ -2,7 +2,7 @@
 
 loadplugins '\.(js|penta)$'
 group user
-set guioptions=bCrsmT
+set guioptions=BbCrsmT
 
 set defsearch=google
 set hintkeys=asdfghjkl;
