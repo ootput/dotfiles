@@ -1,10 +1,7 @@
-"1.1
+" vim: set ft=pentadactyl:
 
 loadplugins '\.(js|penta)$'
 group user
-set guioptions=bCrsmT
-
-" vim: set ft=pentadactyl:
 set guioptions=bCrsmT
 
 set defsearch=google
