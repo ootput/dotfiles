@@ -26,3 +26,6 @@
 [advice]
 	pushNonFastForward = false
 	statusHints = false
+[diff]
+	renames = copies
+	mnemonicprefix = true
