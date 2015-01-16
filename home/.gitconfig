@@ -20,6 +20,7 @@
         st = status
         sta = stash
         last = cat-file commit HEAD
+	d = difftool
 [core]
 	editor = "vim"
 	whitespace = trailing-space,space-before-tab
@@ -29,6 +30,7 @@
 [diff]
 	renames = copies
 	mnemonicprefix = true
+	tool = vimdiff
 [branch]
 	autosetupmerge = true
 [push]
@@ -37,3 +39,5 @@
 	enabled = true
 [merge]
 	stat = true
+[difftool]
+	prompt = false
