@@ -85,5 +85,5 @@ unclutter -idle 2 &
 
 ## Run the conky
 conky -q &
-urxvtc -title shells -name shells -e $HOME/bin/tt shells &
+$HOME/bin/tt shells &
 iceweasel &

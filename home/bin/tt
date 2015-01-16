@@ -1,8 +1,13 @@
 #!/usr/bin/env bash
 # by ootput@freenode
 
+TERMINAL="urxvtc"
+
 for arg in "$@"
 do
+    if [ -n "$DISPLAY" ]; then
+        STARTTERM="$TERMINAL -title $arg -name $arg -e"
+    fi
 
     if tmux has-session -t $arg >/dev/null 2>&1 ; then
         TMUX="" $STARTTERM tmux -2 attach-session -d -t $arg
