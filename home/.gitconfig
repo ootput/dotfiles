@@ -22,3 +22,5 @@
         last = cat-file commit HEAD
 [core]
 	editor = "vim"
+[advice]
+	pushNonFastForward = false
