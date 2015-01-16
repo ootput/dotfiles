@@ -31,3 +31,5 @@
 	mnemonicprefix = true
 [branch]
 	autosetupmerge = true
+[push]
+	default = tracking
