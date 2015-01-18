@@ -25,15 +25,11 @@ hsetroot -solid "#2E3436" &
 
 ## Group start:
 ## 1. nitrogen - restores wallpaper
-## 2. compositor - start
-## 3. sleep - give compositor time to start
-## 4. tint2 panel
+## 2. tint2 panel
 (\
 nitrogen --restore && \
 tint2 \
 ) &
-#cb-compositor --start && \
-#sleep 2s && \
 
 ## Volume control for systray
 (sleep 2s && pnmixer) &
@@ -68,22 +64,22 @@ xset b off &
 
 setxkbmap -option ctrl:swapcaps
 setxkbmap -option terminate:ctrl_alt_bksp
+
+# xcape - bind capslock to act as control in conjunction with other keys, or as escape when on its own
+# http://tilvim.com/2013/04/29/binding-caps-lock.html
 $HOME/bin/xcape &
 
 xset fp+ $HOME/.fonts/profont
 xset fp+ $HOME/.fonts/dina
 xset fp+ $HOME/.fonts/freshfonts
-# xcape - bind capslock to act as control in conjunction with other keys, or as escape when on its own
 
 #eval "$(cat ~/.fehbg)"
 
 urxvtd -q -f -o
 unclutter -idle 2 &
 
-## cb-fortune - have Waldorf say a little adage
-#(sleep 120s && cb-fortune) &
-
 ## Run the conky
 conky -q &
+
 $HOME/bin/tt shells &
 iceweasel &

@@ -6,6 +6,21 @@
                 file:///usr/share/openbox/menu.xsd">
 
 	<menu id="root-menu" label="Openbox 3">
+        <item label="Descartes Shells">
+			<action name="Execute">
+				<command>
+					urxvtc -e ssh descartes
+				</command>
+			</action>
+		</item>
+        <item label="Tennyson Shells">
+			<action name="Execute">
+				<command>
+					tt shells
+				</command>
+			</action>
+		</item>
+		<separator/>
 		<item label="Run Program">
 			<action name="Execute">
 				<command>
@@ -14,28 +29,6 @@
 			</action>
 		</item>
 		<separator/>
-        <item label="Tennyson Shells">
-			<action name="Execute">
-				<command>
-					tt shells
-				</command>
-			</action>
-		</item>
-        <item label="Descartes Shells">
-			<action name="Execute">
-				<command>
-					urxvtc -e ssh descartes
-				</command>
-			</action>
-		</item>
-		<separator/>
-		<item label="Terminal">
-			<action name="Execute">
-				<command>
-					urxvtc
-				</command>
-			</action>
-		</item>
 		<item label="Web Browser">
 			<action name="Execute">
 				<command>
@@ -43,24 +36,17 @@
 				</command>
 			</action>
 		</item>
-		<item label="File Manager">
-			<action name="Execute">
-				<command>
-					thunar
-				</command>
-			</action>
-		</item>
-		<item label="Text Editor">
-			<action name="Execute">
-				<command>
-          urxvtc -e vim
-				</command>
-			</action>
-		</item>
 		<item label="Media Player">
 			<action name="Execute">
 				<command>
 					vlc
+				</command>
+			</action>
+		</item>
+		<item label="File Manager">
+			<action name="Execute">
+				<command>
+					thunar
 				</command>
 			</action>
 		</item>
@@ -339,23 +325,6 @@
 					<action name="Restart"/>
 				</item>
 			</menu>
-			<menu id="Urxvtconfig" label="Urxvt">
-				<item label="Edit config file">
-					<action name="Execute">
-						<command>
-							urxvtc -e gvim ~/.Xresources
-						</command>
-					</action>
-				</item>
-				<separator label="Help?"/>
-				<item label="man page">
-					<action name="Execute">
-						<command>
-							urxvtc -e "man urxvt"
-						</command>
-					</action>
-				</item>
-			</menu>
 			<menu id="tint2config" label="tint2">
 				<item label="Edit config file">
 					<action name="Execute">
@@ -411,6 +380,13 @@
 					</action>
 				</item>
 			</menu>
+            <item label="Edit X resources">
+                <action name="Execute">
+                    <command>
+                        urxvtc -e gvim ~/.Xresources
+                    </command>
+                </action>
+            </item>
 			<item label="Edit Default Applications">
 				<action name="Execute">
 					<command>
