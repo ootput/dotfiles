@@ -1,43 +1,77 @@
 [user]
-	name = Joseph LP
-	email = ootput@gmail.com
+  name = Joseph LP
+  email = ootput@gmail.com
 [color]
-        branch = auto
-        diff = auto
-        interactive = auto
-        status = auto
-	ui = auto
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+  ui = auto
 [format]
-        pretty = oneline
+  pretty = oneline
 [pack]
-        threads = 0
+  threads = 0
 [alias]
-        br = branch
-        ci = commit
-        co = checkout
-        di = diff
-        llog = log --pretty=oneline --abbrev-commit
-        st = status
-        sta = stash
-        last = cat-file commit HEAD
-	d = difftool
+  ## useful aliases from https://ochronus.com/git-tips-from-the-trenches/ {
+
+  ds = diff --staged      # diff your staged changes == review before committing.  
+  st = status -sb         # smarter status - include tag and branch info  
+  fup = log --since '1 day ago' --oneline --author ootput@gmail.com    # I know what you did yesterday - great for follow-ups  
+  ls = log --pretty=format:"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]" --decorate --date=short  # pretty one-line log with tags, branches and authors  
+  lsv = log --pretty=format:"%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]" --decorate --date=short --numstat    # a verbose ls, shows changed files too
+  # some resets without explanation
+  r = reset  
+  r1 = reset HEAD^  
+  r2 = reset HEAD^^  
+  rh = reset --hard  
+  rh1 = reset HEAD^ --hard  
+  rh2 = reset HEAD^^ --hard
+  # basic shortcuts
+  br = branch
+  br = branch  
+  ci = commit  
+  cl = clone  
+  co = checkout  
+  cp = cherry-pick  
+  dc = diff --cached
+  diff = diff --word-diff  
+  last = cat-file commit HEAD
+  st = status
+  sta = stash
+  # stash shortcuts
+  sl = stash list  
+  sa = stash apply  
+  ss = stash save
+  # log related - thanks to @mwd410
+  l = log  
+  lh = log --graph  
+  la = !git lh --date-order --all 2> /dev/null  
+  lb = log --graph --simplify-by-decoration  
+  lba = !git lb --all  
+  llog = log --pretty=oneline --abbrev-commit
+  h = !git --no-pager log --graph -n 15  
+  a = !git --no-pager la -n 15  
+  #}
 [core]
-	editor = "vim"
-	whitespace = trailing-space,space-before-tab
+  editor = "vim"
+  whitespace = trailing-space,space-before-tab
 [advice]
-	pushNonFastForward = false
-	statusHints = false
+  pushNonFastForward = false
+  statusHints = false
 [diff]
-	renames = copies
-	mnemonicprefix = true
-	tool = vimdiff
+  renames = copies
+  mnemonicprefix = true
+  tool = vimdiff
 [branch]
-	autosetupmerge = true
+  autosetupmerge = true
+  autosetuprebase = always
 [push]
-	default = tracking
+  default = tracking
 [rerere]
-	enabled = true
+  enabled = true
 [merge]
-	stat = true
+  stat = true
 [difftool]
-	prompt = false
+  prompt = false
+[help]
+  autocorrect = 1
