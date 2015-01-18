@@ -35,6 +35,6 @@ set editor='gvim -f +<line> +"sil! call cursor(0, <column>)" <file>'
 
 " Pass-through mode for gmail
 set passkeys+=mail.google.com:'!#*+-./<C-Down><C-s><Enter>?INU[]acefjk lmnopqrsuvxyz',*a,*n,*r,*s,*t,*u,ga,gc,gd,gi,gl,gs,gt,yo
-set strictfocus+=mail.google.com:laissez-fair
+set strictfocus+=mail.google.com:laissez-faire
 
 " vim: set ts=2 sw=2 tw=0 et ft=vim :
