@@ -256,3 +256,7 @@ nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 " }
 
 " }
+
+" Abbreviations {
+iab <expr> dts strftime("%c")
+" }
