@@ -207,7 +207,6 @@
 		<menu execute="cb-recent-files-pipemenu" id="pipe-recentfilesmenu" label="Recent Files"/>
 		<separator/>
 		<menu id="settings" label="Settings">
-			<menu execute="cb-compositor" id="CompositingPipeMenu" label="Compositor"/>
 			<menu id="conkyconfig" label="Conky">
 				<item label="Edit .conkyrc">
 					<action name="Execute">
