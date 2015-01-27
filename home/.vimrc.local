@@ -140,6 +140,7 @@ let g:q_ctags_output_file = "" . g:q_ctags_top_dir . "/tags"
 set tags += "" . g:q_ctags_output_file
 " }
 
+" Filetype Settings {
 " C/C++ Settings {
 " Automatically apply C++ syntax hightlight to C files.
 au FileType c set filetype=cpp
@@ -148,7 +149,11 @@ au BufRead * if search('\M-*- C++ -*-', 'n', 1) | setlocal ft=cpp | endif
 
 " On buffer save generate local tags file (non-recursive as it should be fast).
 "au BufWritePost * if &ft =~ 'cpp' | silent !ctags --c++-kinds=+p --fields=+iaS --extra=+q .
-" }"
+" }
+" Git Settings {
+autocmd Filetype gitcommit setlocal spell textwidth=72
+" }
+" }
 
 " Keyboard mappings {
 " Use vim navigation only {
