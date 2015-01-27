@@ -11,7 +11,6 @@ set complete=l
 set defsearch=google
 set editor=gvim
 set focuscontent
-set guioptions+=mTn
 set hintchars=asdfghjkl;
 set hinttags="//*[@onclick or @onmouseover or @onmousedown or @onmouseup or @oncommand or @class='lk' or @role='link' or @role='button' or @role='option'] | //input[not(@type='hidden')] | //a | //area | //iframe | //textarea | //button | //select | //xhtml:input[not(@type='hidden')] | //xhtml:a | //xhtml:area | //xhtml:iframe | //xhtml:textarea | //xhtml:button | //xhtml:select"
 set history=50
