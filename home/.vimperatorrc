@@ -12,7 +12,7 @@ set defsearch=google
 set editor=gvim
 set focuscontent
 set guioptions+=mTn
-set hintchars=asdfhjkl
+set hintchars=asdfghjkl;
 set hinttags="//*[@onclick or @onmouseover or @onmousedown or @onmouseup or @oncommand or @class='lk' or @role='link' or @role='button' or @role='option'] | //input[not(@type='hidden')] | //a | //area | //iframe | //textarea | //button | //select | //xhtml:input[not(@type='hidden')] | //xhtml:a | //xhtml:area | //xhtml:iframe | //xhtml:textarea | //xhtml:button | //xhtml:select"
 set history=50
 set hlsearch
@@ -22,7 +22,7 @@ set newtab=all
 set popups=tab,resized
 set smartcase
 set titlestring="Firefox"
-set toolbars=noaddons,nomenu,tabs
+set toolbars=noaddons,bookmarks,nomenu,tabs
 set verbose=1
 
 map ,d <ESC>:dsearch -query
@@ -31,10 +31,10 @@ map ,w <ESC>:w<CR>
 map ,Q <ESC>:qall!<CR>
 
 cabbrev yt http://www.youtube.com
-cabbrev im https://imap.cc
-cabbrev gt http://github.com/ootput/configs/tree/dotfiles
+cabbrev gt http://github.com/ootput/dotfiles
+cabbrev ogi http://ootput.github.io
 cabbrev fdn http://forums.debian.net
 cabbrev opt http://memberservices.optusnet.com.au/myusage
-cabbrev ez http://eztv.it
+cabbrev rd http://reddit.com
 
 " vim: set ts=2 sw=2 tw=0 et ft=vim :
