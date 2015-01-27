@@ -159,5 +159,5 @@ fi
 # Move to directory and open in Vim
 vcd() {
   cd $1
-  vim $1
+  vim .
 }
