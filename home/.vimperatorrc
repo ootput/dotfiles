@@ -21,7 +21,7 @@ set newtab=all
 set popups=tab,resized
 set smartcase
 set titlestring="Firefox"
-set toolbars=noaddons,bookmarks,nomenu,tabs
+set toolbars=noaddons,bookmarks,menu,tabs
 set verbose=1
 
 map ,d <ESC>:dsearch -query
