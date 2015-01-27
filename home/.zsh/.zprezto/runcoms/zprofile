@@ -41,6 +41,7 @@ cdpath=(
    ~/.homesick/repos
    /data/media
    /data/downloads
+   ~/blog/source
    $cdpath
 )
 

@@ -155,3 +155,9 @@ if [[ $- == *i* && -z "$TMUX"  ]]; then
     exec tmux attach -t $SESSION
   fi
 fi
+
+# Move to directory and open in Vim
+vcd() {
+  cd $1
+  vim $1
+}
