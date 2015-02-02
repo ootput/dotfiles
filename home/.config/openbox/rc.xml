@@ -989,7 +989,7 @@
     <application class="URxvt" name="shells">
       <desktop>all</desktop>
       <maximized>yes</maximized>
-      <decor>no</decor>
+      <decor>yes</decor>
     </application>
   </applications>
 </openbox_config>
