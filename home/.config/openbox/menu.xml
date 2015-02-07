@@ -9,7 +9,7 @@
         <item label="Descartes Shells">
 			<action name="Execute">
 				<command>
-					urxvtc -e ssh descartes
+					urxvtc -e mosh descartes
 				</command>
 			</action>
 		</item>
