@@ -80,6 +80,36 @@
 				</action>
 			</item>
 		</menu>
+		<menu id="photos" label="Photos">
+			<item label="DigiKam">
+				<action name="Execute">
+					<command>
+						digikam
+					</command>
+				</action>
+			</item>
+			<item label="RawTherapee">
+				<action name="Execute">
+					<command>
+						rawtherapee
+					</command>
+				</action>
+			</item>
+		    <item label="Geeqie Raw Image Viewer">
+				<action name="Execute">
+					<command>
+						geeqie
+					</command>
+				</action>
+			</item>
+		    <item label="Rapid Photo Downloader">
+				<action name="Execute">
+					<command>
+                        rapid-photo-downloader
+					</command>
+				</action>
+			</item>
+        </menu>
 		<menu id="graphics" label="Graphics">
 			<item label="GIMP">
 				<action name="Execute">
