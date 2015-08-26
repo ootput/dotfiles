@@ -143,6 +143,7 @@ alias gca='git commit -a'
 alias hp='homeshick pull'
 alias hc='homeshick check'
 alias subrename='for i in *.srt ; do mv $i ${i:r}.en.srt ; done'
+alias v='vim'
 
 if [[ $- == *i* && -z "$TMUX"  ]]; then
   #     Look for unattached sessions

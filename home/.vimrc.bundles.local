@@ -6,7 +6,7 @@
 Bundle 'OmniCppComplete'
 Bundle 'tpope/vim-unimpaired'
 Bundle 'pdurbin/vim-tsv'
-Bundle 'jiangmiao/auto-pairs'
+"Bundle 'jiangmiao/auto-pairs'
 Bundle 'tpope/vim-vinegar'
 Bundle 'terryma/vim-expand-region'
 Bundle 'tyru/open-browser.vim'
