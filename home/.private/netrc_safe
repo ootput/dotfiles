@@ -5,15 +5,3 @@ machine smtp.gmail.com
 machine smtp.gmail.com
         login ootput@gmail.com
         password ***
-
-machine mail.messagingengine.com
-        login jlephan@imap.cc
-        password ***
-
-machine pushkin
-        login joe
-        password ***
-
-machine github.com
-        login ootput
-        password ***

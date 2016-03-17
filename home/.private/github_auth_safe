@@ -1,2 +1,3 @@
 export GITHUB_USER="ootput"
-export GITHUB_TOKEN="<visit https://github.com/account>"
+# go to https://github.com/settings/tokens
+export GITHUB_TOKEN="<insert token here>"
