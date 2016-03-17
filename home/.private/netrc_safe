@@ -5,3 +5,7 @@ machine smtp.gmail.com
 machine smtp.gmail.com
         login ootput@gmail.com
         password ***
+
+machine github.com
+        login ootput
+        password ***
